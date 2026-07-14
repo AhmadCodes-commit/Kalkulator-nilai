@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>menghitung nilai rata-rata</title>
+    <style>
+      body {
+        background-color: lightblue;
+        margin-top: 100px;
+      }
+      .data {
+        display: flex;
+       justify-content: space-around;
+      }
+  
+      #hasil {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        position: relative;
+      }
+ 
+      h1 {
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;     
+  background-color: navy;
+  color: white;
+  padding: 13px;
+  
+}
+
+ .nilai-sangat-baik {
+  color: green;
+  font-weight: bold;
+   }
+   
+ .nilai-baik {
+  color: blue;
+  font-weight: bold;
+   }
+   
+ .nilai-cukup-baik {
+  color: navy;
+  font-weight: bold;
+   }
+   
+ .nilai-remedial {
+  color: orange;
+  font-weight: bold;
+   }
+   
+ .nilai-tidak-naik-kelas {
+  color: red;
+  font-weight: bold;
+   }
+
+   .tombol1 {
+     background-color: green;
+     color: white;
+     box-shadow: 5px 5px 5px grey;
+     width:20%;
+     margin-left: 40%;
+     border-radius: 10%;
+     width: 20%;
+    transition:0.9;
+   }
+   
+   .tombol1:hover {
+     background-color: grey;
+     transform:scale(1.1)
+   }
+   
+   .tombol1:active {
+     background-color: blue;
+     transform:scale(0.9)
+   } 
+   
+   #kotak_tombol {
+     display:flex;
+     justify-content:space-around;
+   }
+   
+   .tombol2 {
+     background-color: red;
+     color: white;
+     box-shadow: 5px 5px 5px grey;
+     width:20%;
+    border-radius: 10%;
+    width: 20%;
+    transition:0.9
+   }
+   
+   .tombol2:hover {
+     background-color:grey;
+     transform:scale(1.1);
+   }
+   
+   .tombol2:active {
+     background-color:blue;
+     transform:scale(0.9)
+   }
+   
+    </style>
+  </head>
+  <body>
+    <h1>kalkulator nilai rata-rata</h1><br><br><br><br><br>
+    <form>
+    <div class="data">
+    <label>Nama siswa</label>
+    <label>kelas</label>
+    </div>
+    
+    <div class="data">
+    <input id="nama" type="text" required="">
+    <input id="kelas" type="text" maxlength="2" pattern="\d*" required="" inputmode="numeric" >
+    </div><br><br><br>
+    
+    <div class="data">
+    <label>Bahasa Inggris</label>
+    <label>Matematika</label>
+    <label>Informatika</label>
+    </div>
+    
+    <div class="data">
+    <input id="ingg" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="mtk" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="inf" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    </div><br><br>
+    
+    <div class="data">
+    <label>Bahasa Indonesia</label>
+    <label>Bahasa daerah</label>
+    <label>prakarya</label>
+    </div>
+    
+    <div class="data">
+    <input id="ind" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="daerah" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="pra" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    </div><br><br>
+    
+    <div class="data">
+    <label>PPKN</label>
+    <label>IPS</label>
+    <label>IPA</label>
+    </div>
+    
+    <div class="data">
+    <input id="pkn" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="ips" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="ipa" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    </div><br><br>
+    
+    <div class="data">
+    <label>PJOK</label>
+    <label>PABP</label>
+    </div>
+    
+    <div class="data">
+    <input id="pjok" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    <input id="pabp" type="text" maxlength="3" pattern="\d*" required="" inputmode="numeric">
+    </div><br><br>
+    
+    
+    <div id="hasil">nilai rata-rata:</div><br>
+    
+    
+    <div id="kotak_tombol">
+    <button class="tombol2" type="reset" onclick="document.getElementById('hasil').innerHTML='nilai rata-rata :';document.getElementById('hasil').className='';">Hapus Semua</button>
+
+      
+     <button class="tombol1" onclick="Hitung(event)">Hitung</button>
+    </div>
+    </form>
+    
+    <script>
+      function Hitung(event) {
+        event.preventDefault();
+        let nama = document.getElementById("nama").value;
+        
+        let kelas = document.getElementById("kelas").value;
+        
+        let nilai = document.getElementById("ingg").value;
+        
+        let nilai2 = document.getElementById("mtk").value;
+        
+        let nilai3 = document.getElementById("inf").value;
+        
+        let nilai4 = document.getElementById("ind").value;
+        
+        let nilai5 = document.getElementById("daerah").value;
+        
+        let nilai6 = document.getElementById("pra").value;
+        
+        let nilai7 = document.getElementById("pkn").value;
+        
+        let nilai8 = document.getElementById("ips").value;
+        
+        let nilai9 = document.getElementById("ipa").value;
+        
+        let nilai10 = document.getElementById("pabp").value;
+        
+        let nilai11 = document.getElementById("pjok").value;
+        
+        
+        if (nilai == "" || nilai2 == "" || nilai3 == "" || nilai4 == "" || nilai5 == "" || nilai6 == "" || nilai7 == "" || nilai8 == "" || nilai9 == "" || nilai10 == "" || nilai11 == "" || nama == "" || kelas == "") {
+          alert("isi semua input!");
+        }
+        
+        else if (nilai > 100 || nilai2 > 100 || nilai3 > 100 || nilai4 > 100 || nilai5 > 100 || nilai6 > 100 || nilai7 > 100 || nilai8 > 100 || nilai9 > 100 || nilai10 > 100 || nilai11 > 100) {
+          alert("masukan nilai yang benar!");
+        }
+        
+        else if (kelas < 1 || kelas > 12) {
+          alert("masukan kelas yang benar!")
+        }
+     
+     else {
+       let namasiswa = nama;
+       let kelasSmp = Number(kelas);
+       let input = Number(nilai);
+       let input2 = Number(nilai2);
+       let input3 = Number(nilai3);
+       let input4 = Number(nilai4);
+       let input5 = Number(nilai5);
+       let input6 = Number(nilai6);
+       let input7 = Number(nilai7);
+       let input8 = Number(nilai8);
+       let input9 = Number(nilai9);
+       let input10 = Number(nilai10);
+       let input11 = Number(nilai11);
+       
+       let rata = (input + input2 + input3 + input4 + input5 + input6 + input7 + input8 + input9 + input10 + input11) / 11;
+       let grade =  ""; 
+       
+       let  namaclass = "";
+       
+       if (rata >= 90 && rata <= 100) {
+         grade = " A: sangat baik";
+         namaclass = "nilai-sangat-baik";
+       } 
+       
+       
+       else if (rata >= 80 && rata < 90) {
+         grade = "B: Baik";
+         namaclass = "nilai-baik"
+       }
+       
+       else if (rata >= 70 && rata < 80) {
+         grade = "C: cukup baik";
+         namaclass = "nilai-cukup-baik"
+       }
+       
+       else if (rata >= 60 && rata <70) {
+         grade = "D: perlu belajar lagi";
+         namaclass = "nilai-remedial"
+       }
+       
+       else if (rata < 60) {
+         grade = "E:Tidak naik kelas!";
+         namaclass = "nilai-tidak-naik-kelas";
+       }
+       
+       document.getElementById("hasil").innerHTML = "nama: " + namasiswa + " " + "| kelas: " + kelasSmp + " | nilai rata-rata: " + rata.toFixed(2) + " | " + "grade: " + grade;
+       
+       document.getElementById("hasil").className = namaclass;
+     }
+      }
+    </script>
+    
+  </body>
+  
+  <!--- HTML yang harus ada:
+Judul halaman
+Input nama siswa
+Input nilai untuk 3 mata pelajaran (Matematika, Bahasa Indonesia, Bahasa Inggris)
+Tombol "Hitung"
+Area hasil <div id="hasil"> — menampilkan hasil perhitungan
+ --->
+ 
+  <!--- 
+CSS yang harus ada:
+Background halaman
+Kartu/box untuk form & hasil
+Tombol dengan hover & active
+Hasil grade warna berbeda — A hijau, E merah, dll --->
+
+<!---
+JavaScript yang harus ada:
+Cek apakah semua input sudah diisi — kalau kosong alert "Isi semua data!"
+Hitung nilai rata-rata dari 3 mata pelajaran
+Tampilkan nama siswa & rata-rata di div#hasil
+If/else untuk grade:
+= 90 → "A — Luar Biasa!"
+= 80 → "B — Bagus!"
+= 70 → "C — Cukup"
+= 60 → "D — Perlu Belajar Lagi"
+< 60 → "E — Remedial!"
+--->
+</html>
